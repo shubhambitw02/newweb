@@ -22,7 +22,6 @@
         </div>
         <div>
             <button id="mute" class="btn btn-dark">mute</button>
-            <button id="unmute" class="btn btn-dark">unmute</button>
         </div>
     </div>
 
@@ -32,12 +31,7 @@
     <script>
         $('#mute').click(function() {
             $('audio').each(function() {
-                $(this).prop('muted', true);
-            });
-        });
-        $('#unmute').click(function() {
-            $('body audio').each(function() {
-                $(this).prop('muted', false);
+                $(this).prop('muted', !$(this).prop("muted"));
             });
         });
 
