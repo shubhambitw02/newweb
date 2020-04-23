@@ -32,6 +32,7 @@
                 $('.sound_wav')[0].play()
             }).catch(error => {
                 // Autoplay was prevented, mute video and play.
+                conosle.log("Autoplay didn't work so the audio is muted");
                 $('.sound_wav')[0].muted = true;
             });
         }
