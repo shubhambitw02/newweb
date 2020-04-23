@@ -5,31 +5,50 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
 </head>
 
 <body>
-    <div class="container-fluid">
+    <div class="container-fluid pt-3">
         <div>
-            <audio controls class="sound_wav" muted>
+            <audio class="sound_wav" controls>
                 <source src="one.ogg" type="audio/ogg" />
                 <source src="one.mp3" type="audio/mpeg" />
             </audio>
         </div>
+        <a href="#" id="anchor">Dummy Link</a>
     </div>
+
 
     <script src="https://code.jquery.com/jquery-3.5.0.min.js" integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ=" crossorigin="anonymous"></script>
     <script>
+        /* getting the play method for the audio */
+        var promise = $('.sound_wav')[0].play();
+        /* checking to see if it is undefined */
+        if (promise !== undefined) {
+            /* if the method works autoplay starts */
+            promise.then(_ => {
+                console.log("autoplay worked");
+                // Autoplay started!
+                $('.sound_wav')[0].play()
+            }).catch(error => {
+                // Autoplay was prevented, mute video and play.
+                $('.sound_wav')[0].muted = true;
+            });
+        }
+
         /* declaring a global variable to see if the user has had any interaction with the document */
-        var interaction = false;
+        var audioMuted = true;
         /* running a play method when clicked on document anywhere, also when clicked on any elements in the browser */
-        $(document).click(function(){
-            if (interaction == false ) {
-                 $('.sound_wav')[0].play();
-                interaction = true;
-                $('.sound_wav')[0].muted = false;                
+        $('a#anchor').click(function() {
+            if (audioMuted == true) {
+                $('.sound_wav')[0].play();
+                audioMuted = false;
+                $('.sound_wav')[0].muted = false;
             }
         });
+
     </script>
 </body>
 
