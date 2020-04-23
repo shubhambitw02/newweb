@@ -10,12 +10,12 @@
 <body>
     <div class="container-fluid pt-3">
         <div>
-            <audio class="sound_wav" controls>
+            <audio class="sound_wav">
                 <source src="one.ogg" type="audio/ogg" />
                 <source src="one.mp3" type="audio/mpeg" />
             </audio>
         </div>
-        <a href="#" id="anchor">Dummy Link</a>
+        <a href="#" id="anchor">Speaker Off</a>
     </div>
 
 
@@ -45,6 +45,7 @@
                 $('.sound_wav')[0].play();
                 audioMuted = false;
                 $('.sound_wav')[0].muted = false;
+                $('#anchor').text('Speaker On');
             }
         });
 
