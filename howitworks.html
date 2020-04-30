@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <!-- link to swiper.css -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.min.css" />
+
+    <!-- link to roboto font -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- link to font Awesome css -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+
+    <style>
+      body {
+        font-family: "Roboto", sans-serif;
+      }
+
+      .title {
+        text-align: center;
+        margin-bottom: 60px;
+      }
+
+      .icon-container {
+        height: 120px;
+        width: 120px;
+        border: solid 1px #9d9c9c;
+        margin: 0 auto;
+        border-radius: 50%;
+        margin-bottom: 15px;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        font-size: 42px;
+        color: #9d9c9c;
+        position: absolute;
+        left: calc(50% - 60px);
+        top: 0px;
+      }
+
+      .option-container .text {
+        text-align: center;
+        text-transform: uppercase;
+        color: #9d9c9c;
+      }
+      #option-wrapper {
+        max-width: 650px;
+        margin: 0 auto;
+        width: 100%;
+        padding: 0px 15px;
+      }
+
+      .option-container {
+        margin-bottom: 15px;
+        padding-top: 135px;
+      }
+
+      .slider-inner {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 0px 15px;
+      }
+
+      .swiper-container {
+        margin-top: 60px;
+      }
+
+      .learn-morebtn.btn {
+        background: #fe4987;
+        color: white;
+        text-transform: uppercase;
+      }
+
+      .underline-container {
+        position: relative;
+        height: 10px;
+        width: 100%;
+      }
+
+      .underline {
+        width: 100%;
+        max-width: 100px;
+        transition: all 0.5s;
+        position: absolute;
+        height: 100%;
+        background: #fe4987;
+        border-radius: 20px;
+      }
+
+      .first .underline {
+        left: 9%;
+      }
+
+      .second .underline {
+        left: 42%;
+      }
+
+      .third .underline {
+        left: 76%;
+      }
+
+      .option-container.active .icon-container.active {
+        transform: scale(1);
+      }
+
+      .option-inner .icon-container.active {
+        transform: scale(0);
+        z-index: 10;
+        background: #fe4987;
+        transform-origin: center;
+        transition: all 0.3s;
+        color: white;
+        border-color: #fe4987;
+      }
+
+      .swiper-button-prev:after,
+      .swiper-container-rtl .swiper-button-next:after {
+        content: "\f137";
+        display: inline-block;
+        font: normal normal normal 14px/1 FontAwesome;
+        font-size: 40px;
+        text-rendering: auto;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        color: #9c9c9c;
+      }
+
+      .swiper-button-next:after,
+      .swiper-container-rtl .swiper-button-prev:after {
+        content: "\f138";
+        display: inline-block;
+        font: normal normal normal 14px/1 FontAwesome;
+        font-size: 40px;
+        text-rendering: auto;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        color: #9c9c9c;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container py-5">
+      <h4 class="title">How it Works?</h4>
+      <!-- #option-wrapper -->
+      <div class="first" id="option-wrapper">
+        <div class="row">
+          <div class="col-md-4">
+            <div
+              data-slide="1"
+              data-name="first"
+              class="option-container active"
+            >
+              <div class="option-inner">
+                <div class="icon-container">
+                  <i class="fa fa-money"></i>
+                </div>
+                <div class="icon-container active">
+                  <i class="fa fa-money"></i>
+                </div>
+                <div class="text"><h4>Cashback</h4></div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div data-slide="2" data-name="second" class="option-container">
+              <div class="option-inner">
+                <div class="icon-container">
+                  <i class="fa fa-gift"></i>
+                </div>
+                <div class="icon-container active">
+                  <i class="fa fa-gift"></i>
+                </div>
+                <div class="text"><h4>Giftcards</h4></div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div data-slide="3" data-name="third" class="option-container">
+              <div class="option-inner">
+                <div class="icon-container">
+                  <i class="fa fa-product-hunt"></i>
+                </div>
+                <div class="icon-container active">
+                  <i class="fa fa-product-hunt"></i>
+                </div>
+                <div class="text"><h4>Products</h4></div>
+              </div>
+            </div>
+          </div>
+          <div class="underline-container">
+            <div class="underline"></div>
+          </div>
+        </div>
+      </div>
+      <!-- end of #option-wrapper -->
+
+      <div class="swiper-container">
+        <!-- Additional required wrapper -->
+        <div class="swiper-wrapper">
+          <!-- Slides -->
+          <div class="swiper-slide">
+            <div class="slider-inner">
+              <div class="row">
+                <div class="col-md-5">
+                  <div class="slider-img">
+                    <img
+                      src="https://res.cloudinary.com/linkisin/image/upload/v1588238209/zingoy/Zingoy_Home_Page/slider-1.png"
+                      alt="Cashback"
+                      class="img-fluid"
+                    />
+                  </div>
+                </div>
+                <div class="col-md-6 offset-1">
+                  <div class="slider-info">
+                    <h2 class="">Earn on Online Shopping</h2>
+                    <p>
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                      Cras dictum mi a diam tristique lacinia. Quisque nibh
+                      tortor, cursus eget leo at, vestibulum maximus ante.
+                      Pellentesque iaculis sagittis rhoncus.
+                    </p>
+                    <a href="#" class="btn learn-morebtn">Learn More</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="slider-inner">
+              <div class="row">
+                <div class="col-md-5">
+                  <div class="slider-img">
+                    <img
+                      src="https://res.cloudinary.com/linkisin/image/upload/v1588238208/zingoy/Zingoy_Home_Page/slider-2.png"
+                      alt="Giftcard"
+                      class="img-fluid"
+                    />
+                  </div>
+                </div>
+                <div class="col-md-6 offset-1">
+                  <div class="slider-info">
+                    <h2 class="">Buy Gift Cards</h2>
+                    <p>
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                      Cras dictum mi a diam tristique lacinia. Quisque nibh
+                      tortor, cursus eget leo at, vestibulum maximus ante.
+                      Pellentesque iaculis sagittis rhoncus.
+                    </p>
+                    <a href="#" class="btn learn-morebtn">Learn More</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="slider-inner">
+              <div class="row">
+                <div class="col-md-5">
+                  <div class="slider-img">
+                    <img
+                      src="https://res.cloudinary.com/linkisin/image/upload/v1588238612/zingoy/Zingoy_Home_Page/slider-3.png"
+                      alt="Products"
+                      class="img-fluid"
+                    />
+                  </div>
+                </div>
+                <div class="col-md-6 offset-1">
+                  <div class="slider-info">
+                    <h2 class="">Handpicked Products</h2>
+                    <p>
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                      Cras dictum mi a diam tristique lacinia. Quisque nibh
+                      tortor, cursus eget leo at, vestibulum maximus ante.
+                      Pellentesque iaculis sagittis rhoncus.
+                    </p>
+                    <a href="#" class="btn learn-morebtn">Learn More</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- If we need navigation buttons -->
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+      </div>
+    </div>
+    <!-- jquery -->
+    <script
+      src="https://code.jquery.com/jquery-3.5.0.js"
+      integrity="sha256-r/AaFHrszJtwpe+tHyNi/XCfMxYpbsRg2Uqn0x3s2zc="
+      crossorigin="anonymous"
+    ></script>
+    <!-- script for swiper.js -->
+    <script src="https://unpkg.com/swiper/js/swiper.min.js"></script>
+    <script>
+      var mySwiper = new Swiper(".swiper-container", {
+        loop: true,
+        // Navigation arrows
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+      });
+
+      $(".option-container").click(function () {
+        if (!$(this).hasClass("active")) {
+          var i = $(this).attr("data-slide");
+          var activeSlide = $(this).attr("data-name");
+          $("#option-wrapper").attr("class", activeSlide);
+          $(".option-container").removeClass("active");
+          $(this).addClass("active");
+          mySwiper.slideTo(i, 400);
+        }
+      });
+
+      mySwiper.on("slideChange", function () {
+        var slideIndex = mySwiper.realIndex + 1;
+        $(".option-container").attr("data-slide");
+        $(".option-container").removeClass("active");
+        var activeSlide = $(".option-container")
+          .filter(function () {
+            return $(this).attr("data-slide") == slideIndex;
+          })
+          .addClass("active");
+        var slideName = activeSlide.attr("data-name");
+        $("#option-wrapper").attr("class", slideName);
+      });
+    </script>
+  </body>
+</html>
